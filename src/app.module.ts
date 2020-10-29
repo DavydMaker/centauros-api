@@ -5,9 +5,12 @@ import { AuthModule } from './modules/auth/auth.module';
 import { UsersModule } from './modules/users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeOrmConfig } from './configs/typeorm.config';
+import { PassengerModule } from './modules/passenger/passenger.module';
+import { ReservationsModule } from './modules/reservations/reservations.module';
+import { ReservationsUsersModule } from './modules/reservations-users/reservations-users.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(typeOrmConfig), UsersModule, AuthModule],
+  imports: [TypeOrmModule.forRoot(typeOrmConfig), UsersModule, AuthModule, PassengerModule, ReservationsModule, ReservationsUsersModule],
   controllers: [
     UsersController, AppController],
   providers: [],
